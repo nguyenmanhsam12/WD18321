@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo 'trang chur';
 });
+
+
+Route::get('/test',function(){
+    echo '123';
+});
+
+Route::get('/show-user',[UserController::class,'showUser']);
+
+Route::get('/get-user/{id}/{name?}',[UserController::class,'getUser']);
+
+Route::get('/update-user',[UserController::class,'updateUser']);
+
+
+
+Route::get('/thong-tin-sv',[ProfileController::class,'thongTin']);
+
+
+
+
