@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,19 @@ Route::prefix('/users')->group(function(){
    Route::get('/edit/{id}',[UserController::class,'editUser'])->name('users.editUser');
    Route::post('/update/{id}',[UserController::class,'updateUser'])->name('users.updateUser');
 });
+
+Route::prefix('product')->group(function(){
+    Route::get('/list-product',[ProductController::class,'listProduct'])->name('product.index');
+    Route::get('/add-product',[ProductController::class,'addProduct'])->name('product.addProduct');
+    Route::post('/post-product',[ProductController::class,'postProduct'])->name('product.postProduct');
+    Route::get('/delelte/{id}',[ProductController::class,'deleteProduct'])->name('product.delete');
+    Route::get('/edit/{id}',[ProductController::class,'editProduct'])->name('product.edit');
+    Route::post('/update/{id}',[ProductController::class,'updateProduct'])->name('product.update');
+    Route::post('/timkiem',[ProductController::class,'timkiem'])->name('product.timkiem');
+    
+});
+
+
 
 
 
