@@ -7,23 +7,27 @@
 </head>
 <body>  
     <h1>Chào cái cc</h1>
-    <table>
+    <table border="1"> 
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                <th>email</th>
             </tr>
         </thead>
         <tbody>
-        <?php foreach($users as $us): ?>
-            <tr>
-                <td><?= $us['id'] ?></td>
-                <td><?= $us['name'] ?></td>
-            </tr>
-        <?php endforeach ?>
+            @foreach ($Listusers as $user)
+                <tr>
+                    <td> {{ $user->id }}</td>
+                    <td> {{ $user->name }}</td>
+                    <td> {{ $user->email }}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 
+
+    
   
 </body>
 </html>

@@ -37,3 +37,14 @@ Route::get('/thong-tin-sv',[ProfileController::class,'thongTin']);
 
 
 
+Route::prefix('/users')->group(function(){
+   Route::get('/list-users',[UserController::class,'listUsers'])->name('users.listUsers');
+   Route::get('/add-users',[UserController::class,'addUser'])->name('users.addUser');
+   Route::post('/add-users',[UserController::class,'addPostUser'])->name('users.addPostUser');
+   Route::get('/detele/{id}',[UserController::class,'deleteUser'])->name('users.deleteUser');
+   Route::get('/edit/{id}',[UserController::class,'editUser'])->name('users.editUser');
+   Route::post('/update/{id}',[UserController::class,'updateUser'])->name('users.updateUser');
+});
+
+
+
